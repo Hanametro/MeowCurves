@@ -28,6 +28,7 @@ namespace DFlibTest
                 .InsertCurve(new(X.ToArray(), Y1.ToArray(), Color.Aqua, 2, true))
                 .InsertCurve(new(X.ToArray(), Y2.ToArray(), Color.Bisque, 2, true))
                     .Plot().ShowBitmapAsBase64();
+            //在屏幕中写出图片的base64,是sin和cos的图像
         }
     }
 }
