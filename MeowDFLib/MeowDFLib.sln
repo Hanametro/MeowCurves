@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeowDFLib", "MeowDFLib.csproj", "{4C5F73EE-E034-4AAB-A879-FD55EE3DA53B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFlibTest", "..\DFlibTest\DFlibTest.csproj", "{1D36C163-1BE0-417F-926A-D77FC40BD975}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C5F73EE-E034-4AAB-A879-FD55EE3DA53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5F73EE-E034-4AAB-A879-FD55EE3DA53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5F73EE-E034-4AAB-A879-FD55EE3DA53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5F73EE-E034-4AAB-A879-FD55EE3DA53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D36C163-1BE0-417F-926A-D77FC40BD975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D36C163-1BE0-417F-926A-D77FC40BD975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D36C163-1BE0-417F-926A-D77FC40BD975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D36C163-1BE0-417F-926A-D77FC40BD975}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05C016E3-A5C2-4710-8D22-7501233C4789}
+	EndGlobalSection
+EndGlobal
