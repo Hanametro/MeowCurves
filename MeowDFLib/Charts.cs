@@ -166,14 +166,22 @@ namespace MeowDFLib
                 }
             }
             //确定起始位置
-            var y0 = -(int)Axis[1].StartPos;
+            var y0 = (int)Axis[1].StartPos;
             var x0 = (int)Axis[0].StartPos;
             //初始化画板
             using Graphics g = Graphics.FromImage(b);
+            //仿射变换
+            g.TranslateTransform(x0 + SafePadding, Height - y0 - SafePadding);
+            //矩阵变换
+            g.ScaleTransform(1, -1);
             //x轴
-            g.DrawLine(new(Axis[0].AxisColor, 1), new(0, y0), new(Width, y0));
+            g.DrawLine(new(Axis[0].AxisColor, 1), new(0 - SafePadding, y0), new(Width, y0));
+            for (int i = 0 - SafePadding; i < Width; i+=(int)Axis[0].MinorScale)
+            {
+
+            }
             //y轴
-            g.DrawLine(new(Axis[1].AxisColor, 1), new(x0, 0), new(x0, Height));
+            g.DrawLine(new(Axis[1].AxisColor, 1), new(x0, 0 - SafePadding), new(x0, Height));
             //逐一绘制曲线
             foreach (var d in Curves)
             {
@@ -184,7 +192,7 @@ namespace MeowDFLib
                 {
                     var xx = (int)Math.Floor(d.x[i] * xScaletrim ?? 1);
                     var yy = (int)Math.Floor(d.y[i] * yScaletrim ?? 1);
-                    points.Add(new(xx + (int)Axis[0].StartPos,-(yy + (int)Axis[1].StartPos)));
+                    points.Add(new(xx + (int)Axis[0].StartPos,  (yy + (int)Axis[1].StartPos)));
                 }
                 //构图曲线
                 g.DrawCurve(new(d.CurveColor ?? Color.Black, d.CurveBold), points.ToArray());
@@ -204,6 +212,7 @@ namespace MeowDFLib
                     }
                 }
             }
+            
             //返还实例
             return this;
         }

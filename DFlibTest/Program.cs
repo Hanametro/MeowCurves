@@ -12,11 +12,9 @@ namespace DFlibTest
         {
             var k = Enumerable.Range(0, 20).ToList();
             List<double> X = new();
-            List<double> Y1 = new();
-            List<double> Y2 = new();
+            List<double> Y3 = new();
             k.ForEach(x => X.Add(x));
-            k.ForEach(x => Y1.Add(Math.Sin(x)));
-            k.ForEach(x => Y2.Add(Math.Cos(x)));
+            k.ForEach(x => Y3.Add(Math.Pow(x,2)));
 
 
             new Charts2D()
@@ -25,8 +23,7 @@ namespace DFlibTest
                 Height = 500,
             }
             .InitGraph()
-                .InsertCurve(new(X.ToArray(), Y1.ToArray(), Color.Aqua, 2, true))
-                .InsertCurve(new(X.ToArray(), Y2.ToArray(), Color.Bisque, 2, true))
+                .InsertCurve(new(X.ToArray(), Y3.ToArray(), Color.Black, 2, true))
                     .Plot().ShowBitmapAsBase64();
             //在屏幕中写出图片的base64,是sin和cos的图像
         }
